@@ -1,0 +1,5 @@
+java is 1.8 
+hyperledger fabric 2.4.8
+export PATH=/Users/npokhriy/apache-maven-3.9.5/bin:$PATH
+export JAVA_HOME=/Users/npokhriy/JAVA/JDK1.8:$PATH
+mvn clean package -P production
