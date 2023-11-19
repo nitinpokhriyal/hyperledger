@@ -1,5 +1,19 @@
-java is 1.8 
-hyperledger fabric 2.4.8
+required software
+1. java is 1.8 
+2. hyperledger fabric 2.4.8
+3. maven 
+
+
 export PATH=/Users/npokhriy/apache-maven-3.9.5/bin:$PATH
+
 export JAVA_HOME=/Users/npokhriy/JAVA/JDK1.8:$PATH
+
+can build using following command from inside the hyperledger folder, if mvn profile not required removed -P production
 mvn clean package -P production
+
+if want to skip test run following command during build
+mvn clean package -P production -Dmaven.test.skip=true
+
+error:
+1. if endoroser error while running client, delete users from wallet and regenerate admin and appuser again 
+by running enrolladmin and registeruser.java .

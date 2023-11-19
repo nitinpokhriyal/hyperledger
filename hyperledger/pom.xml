@@ -5,8 +5,8 @@
   <groupId>Fabric</groupId>
   <artifactId>hyperledger</artifactId>
   <version>1</version>
-  <packaging>jar</packaging>
- <!--<packaging>war</packaging>-->
+  <!--<packaging>jar</packaging>-->
+ <packaging>war</packaging>
 
   <properties>
     <java.version>1.8</java.version>
@@ -120,13 +120,29 @@
   </dependencies>
 
   <build>
+	  <finalName>hyperledger</finalName>
+	  <resources>
+	    <resource>
+	        <directory>${project.basedir}/webapps</directory>
+	        <includes>
+	            <include>**/*.html</include>
+	        </includes>
+	    </resource>
+	</resources> 
     <pluginManagement>
       <plugins>
+	   <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-dependency-plugin</artifactId>
+		    <version>2.8</version>
+        </plugin>
         <plugin>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-maven-plugin</artifactId>
           <version>2.1.1.RELEASE</version>
         </plugin>
+        
+         
       </plugins>
     </pluginManagement>
 
@@ -134,15 +150,38 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
-
-        <executions>
+		<configuration>
+                <classifier>exec</classifier>
+         </configuration>
+       <!-- <executions>
           <execution>
             <goals>
               <goal>repackage</goal>
             </goals>
           </execution>
-        </executions>
+        </executions>-->
       </plugin>
+          <!--<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-dependency-plugin</artifactId>
+		    <version>2.8</version>
+		    <executions>
+		        <execution>
+		        <id>copy-dependencies</id>
+		        <phase>prepare-package</phase>
+		        <goals>
+		            <goal>copy-dependencies</goal>
+		        </goals>
+		        <configuration>
+		            <outputDirectory>
+		              ${project.build.directory}/classes/lib
+		            </outputDirectory>
+		            <includeScope>runtime</includeScope>
+		        </configuration>
+		        </execution>
+		    </executions>
+		   </plugin>
+-->
     </plugins>
   </build>
 </project>

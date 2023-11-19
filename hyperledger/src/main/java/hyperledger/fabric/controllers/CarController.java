@@ -29,6 +29,7 @@ public class CarController {
 
     @GetMapping(path = {"/getAllCars"})
     public ResponseEntity<?> getAllCars(HttpServletRequest httpRequest) throws Exception {
+    	System.out.println("getting cars..");
     	String cars=baseFabricRepository.getAllCar();
     	JSONArray jsonArray=new JSONArray(cars);
     	List<Car> carList=new ArrayList<Car>();

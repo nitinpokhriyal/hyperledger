@@ -1,9 +1,13 @@
 package hyperledger.fabric.respositories;
 
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParser;
 
 import org.hyperledger.fabric.gateway.Contract;
 import org.hyperledger.fabric.gateway.Gateway;
@@ -11,6 +15,7 @@ import org.hyperledger.fabric.gateway.Network;
 import org.hyperledger.fabric.gateway.Wallet;
 import org.hyperledger.fabric.gateway.Wallets;
 import org.springframework.stereotype.Repository;
+
 
 import hyperledger.fabric.model.Car;
 
@@ -66,11 +71,12 @@ public class BaseFabricRepository {
 			return contractMap.get(contractName);
 		}
 		System.out.print("getting new  contract.......");
-		Path walletPath = Paths.get("wallet");
+		Path walletPath = Paths.get("../../../fabricpoc/fabric-samples/fabcar/hyperledger/hyperledger/wallet");
 		Wallet wallet = Wallets.newFileSystemWallet(walletPath);
+		System.out.print("walletPath :" +walletPath.toAbsolutePath());
 		// load a CCP
-		Path networkConfigPath = Paths.get("..", "..", "test-network", "organizations", "peerOrganizations", "org1.example.com", "connection-org1.yaml");
-
+		Path networkConfigPath = Paths.get("../../../fabricpoc/fabric-samples/","test-network", "organizations", "peerOrganizations", "org1.example.com", "connection-org1.yaml");
+		System.out.println("networkConfigPath :" +networkConfigPath.toAbsolutePath());
 		Gateway.Builder builder = Gateway.createBuilder();
 		builder.identity(wallet, "appUser").networkConfig(networkConfigPath).discovery(true);
 
@@ -86,5 +92,10 @@ public class BaseFabricRepository {
 		}
 		return contract;
 	}
+	
+	//private String prettyJson(final byte[] json) {
+//		return new String(json, StandardCharsets.UTF_8);
+//	}
+
 	
 }
