@@ -2,6 +2,7 @@ required software
 1. java is 1.8 
 2. hyperledger fabric 2.4.8
 3. maven 
+4. tomcat apache-tomcat-9.0.82
 
 
 export PATH=/Users/npokhriy/apache-maven-3.9.5/bin:$PATH
