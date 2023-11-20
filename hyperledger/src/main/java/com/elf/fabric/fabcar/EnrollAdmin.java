@@ -2,7 +2,7 @@
 SPDX-License-Identifier: Apache-2.0
 */
 
-package hyperledger.fabric.fabcar;
+package com.elf.fabric.fabcar;
 
 import java.nio.file.Paths;
 import java.util.Properties;

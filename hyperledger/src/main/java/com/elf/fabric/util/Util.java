@@ -1,4 +1,4 @@
-package hyperledger.fabric.util;
+package com.elf.fabric.util;
 
 
 import java.io.BufferedReader;
@@ -24,8 +24,8 @@ import javax.xml.bind.DatatypeConverter;
 
 import org.hyperledger.fabric.sdk.exception.CryptoException;
 
-import hyperledger.fabric.user.CAEnrollment;
-import hyperledger.fabric.user.UserContext;
+import com.elf.fabric.user.CAEnrollment;
+import com.elf.fabric.user.UserContext;
 
 /**
  *

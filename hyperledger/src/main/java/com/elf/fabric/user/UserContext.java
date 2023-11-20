@@ -1,4 +1,4 @@
-package hyperledger.fabric.user;
+package com.elf.fabric.user;
 
 import java.io.Serializable;
 import java.util.Set;

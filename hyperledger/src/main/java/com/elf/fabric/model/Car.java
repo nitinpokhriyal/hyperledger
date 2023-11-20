@@ -1,4 +1,4 @@
-package hyperledger.fabric.model;
+package com.elf.fabric.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreType;
 import com.fasterxml.jackson.annotation.JsonInclude;
