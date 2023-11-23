@@ -4,6 +4,11 @@ required software
 3. maven 
 4. tomcat apache-tomcat-9.0.82
 
+sample command to up network with certificate authority
+./network.sh up createChannel -c <<channelname>> -ca -s couchdb
+
+copy shell scripts in docker 
+
 
 export PATH=/Users/npokhriy/apache-maven-3.9.5/bin:$PATH
 

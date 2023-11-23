@@ -20,7 +20,7 @@ import com.elf.fabric.respositories.BaseFabricRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
-public class CarController {
+public class ContractController {
 	
 	@Autowired
 	BaseFabricRepository baseFabricRepository;
