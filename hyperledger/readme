@@ -23,3 +23,5 @@ mvn clean package -P production -Dmaven.test.skip=true
 error:
 1. if endoroser error while running client, delete users from wallet and regenerate admin and appuser again 
 by running enrolladmin and registeruser.java .
+
+curl http://localhost:8080/hyperledger/queryContract
